@@ -1,0 +1,96 @@
+/* Navbar Container */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 8%;
+    padding: 20px 0;
+    border-bottom: 2px solid #f0f0f0; /* Add optional border */
+}
+
+/* Navbar Menu */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 3rem; /* Adjusted spacing */
+    font-size: 1rem;
+}
+
+.nav-menu li {
+    cursor: pointer;
+    color: #f3ecd6; /* Golden beige text color */
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-menu li:hover {
+    color: #d4af37; /* Golden hover effect */
+}
+
+.nav-menu li::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    height: 2px;
+    width: 0;
+    background-color: #d4af37; /* Light golden underline */
+    transition: width 0.3s ease;
+}
+
+.nav-menu li:hover::after {
+    width: 100%;
+}
+
+/* Ruban Text Styling */
+.Ruban {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    color: #f3ecd6; /* Beige-golden color */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none; /* Remove underline */
+    margin-left: 20px; /* Move slightly to the right */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.Ruban:hover {
+    color: #d4af37; /* Golden hover effect */
+    transform: scale(1.05); /* Smooth scaling effect */
+}
+
+/* Connect Button */
+.nav-connect {
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    background: linear-gradient(90deg, #DA7C25, #B415FF); /* Previous gradient color */
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-connect:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(180, 21, 255, 0.8); /* Glowing shadow effect */
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-connect {
+        margin-top: 10px;
+    }
+}

@@ -1,0 +1,135 @@
+/* General Tab Styles */
+.tabs-container {
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .tabs-header {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+  
+  .tab-button {
+    background: linear-gradient(135deg, #444, #222);
+    color: #f3ecd6;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .tab-button:hover,
+  .tab-button.active {
+    background: linear-gradient(135deg, #3A0CA3, #FF5F6D);
+    transform: scale(1.05);
+  }
+  
+  /* Project Grid */
+  .projects-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin: 30px 0;
+  }
+  
+  .project-card {
+    background: linear-gradient(135deg, #202026, #2c2c34);
+    color: #f3ecd6;
+    padding: 30px;
+    border-radius: 15px;
+    width: 250px;
+    height: 150px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* Technologies */
+  .technologies {
+    margin-bottom: 25px;
+    margin-top: 25px;
+    gap: 10px;
+  }
+  
+  .tech-badge {
+    background: #444;
+    
+    color: #f3ecd6;
+    padding: 1px 8px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    margin: 5px;
+    display: inline-block;
+  }
+  
+  /* GitHub Button */
+  .github-button {
+    background: linear-gradient(90deg, #3A0CA3, #FF5F6D);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .github-button:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Dot Navigation */
+  .dot-navigation {
+    margin-top: 20px;
+  }
+  
+  .dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: #444;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .dot.active {
+    background: linear-gradient(135deg, #3A0CA3, #FF5F6D);
+  }
+  
+  .dot:hover {
+    background: #3A0CA3;
+  }
+  
+  /* View All Button */
+  .view-all-button-container {
+    margin-top: 40px;
+  }
+  
+  .view-all-button {
+    background: linear-gradient(90deg, #545a31, #588191);
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .view-all-button:hover {
+    transform: scale(1.05);
+  }
+  

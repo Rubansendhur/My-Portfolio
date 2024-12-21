@@ -1,0 +1,148 @@
+.roles-container {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.roles-header h1 {
+    font-size: 2.8rem;
+    color: #f3ecd6;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.roles-header p {
+    font-size: 1.3rem;
+    color: #d4d4d4;
+    margin-bottom: 20px;
+}
+
+.roles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three equal columns for the first row */
+    grid-auto-rows: auto; /* Automatically size rows */
+    gap: 30px; /* Space between cards */
+    justify-items: center; /* Center-align cards */
+    margin: 40px 0;
+    position: relative;
+}
+
+/* Add vertical spacing between rows */
+.roles-grid > :nth-child(4),
+.roles-grid > :nth-child(5) {
+    margin-top: 50px; /* Moves the second row lower */
+}
+
+.role-card {
+    background: linear-gradient(135deg, #242426, #313134);
+    color: #f3ecd6;
+    padding: 25px;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.role-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
+}
+
+.role-icon {
+    font-size: 3rem;
+    color: #d79f5c;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.role-icon:hover {
+    transform: scale(1.1);
+}
+
+.role-year {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #d4d4d4;
+    margin-top: 10px;
+}
+
+.role-description {
+    font-size: 1rem;
+    color: #e8e8e8;
+    margin-top: 8px;
+    line-height: 1.5;
+}
+
+/* Center the two bottom cards */
+.role-card:nth-child(4) {
+    grid-column: 1 / 3; /* Place in the first two columns */
+    transform: translateX(-10%); /* Slight adjustment for balance */
+}
+
+.role-card:nth-child(5) {
+    grid-column: 2.5 / 4; /* Place in the last column */
+    transform: translateX(-60%); /* Adjust alignment under the first row */
+}
+
+/* Hover effect for the two bottom cards */
+.role-card:nth-child(4):hover,
+.role-card:nth-child(5):hover {
+    transform: translateY(-12px) scale(1.02); /* Slightly lift and enlarge */
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.5); /* Add a stronger shadow */
+    background: linear-gradient(135deg, #2c2c34, #3a3a42); /* Change background gradient */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+
+
+/* Add decorative connecting lines */
+.roles-grid::before {
+    content: "";
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    width: 2px;
+    height: calc(100% - 150px); /* Adjust for vertical spacing */
+    background: linear-gradient(180deg, #555, #777);
+    transform: translateX(-50%);
+    z-index: -1; /* Place behind cards */
+}
+
+.role-card:nth-child(4)::before {
+    content: "";
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, #f3ecd6, #d79f5c);
+    transform: translateX(-50%);
+}
+
+.role-card:nth-child(5)::before {
+    content: "";
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, #f3ecd6, #d79f5c);
+    transform: translateX(-50%);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .roles-grid {
+        grid-template-columns: 1fr; /* Stack all cards vertically */
+        gap: 25px;
+    }
+
+    .role-card {
+        width: 100%; /* Full width on small screens */
+    }
+
+    .role-card:nth-child(4),
+    .role-card:nth-child(5) {
+        grid-column: auto; /* Reset alignment for smaller screens */
+    }
+}

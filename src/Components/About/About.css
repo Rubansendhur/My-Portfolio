@@ -1,0 +1,303 @@
+/* Container */
+.about-container {
+    padding: 180px;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  
+  }
+  
+  /* Title Section */
+  .about-title {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .about-title h1 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #f3ecd6;
+  }
+  
+  .about-title p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #d4d4d4;
+    
+  }
+  
+  /* Main Content */
+  .about-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  
+  /* Photo Section */
+  .about-photo img {
+    width: 300px;
+    height: 500px;
+    border-radius: 15px;
+    object-fit: cover;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+  }
+  
+  .about-photo img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Right Section */
+  .about-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+/* Achievement Cards */
+.about-achievements {
+    display: flex;
+    gap: 20px;
+}
+
+.achievement-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column; /* Stacks content vertically */
+    justify-content: space-between; /* Ensures spacing between elements */
+    padding: 20px;
+    border-radius: 30px;
+    text-align: left; /* Align content to the left */
+    background: linear-gradient(135deg, #ff9dada4, #ffc3a0);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.achievement-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.achievement-card h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.achievement-card ul {
+    list-style: inside; /* Removes bullet points */
+    padding: 0;
+    margin: 10px 0; /* Adds spacing around the list */
+    font-size: 1rem;
+    color: #f3ecd6;
+    line-height: 1.6; /* Increases spacing between list items */
+}
+
+.achievement-card ul li {
+    margin-bottom: 8px; /* Space between list items */
+    padding-left: 6px; /* Adds slight padding for a clean look */
+}
+
+.achievement-card p {
+    font-size: 1rem;
+    color: #f3ecd6;
+    margin-bottom: 15px;
+}
+
+/* Buttons Positioned to Bottom-Left */
+.card-button {
+    align-self: flex-start; /* Aligns the button to the bottom-left */
+    margin-top: auto; /* Pushes the button to the bottom of the card */
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(90deg, #3A0CA3, #FF5F6D);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(255, 95, 109, 0.3);
+}
+
+/* Icons for Cards */
+.card-icon {
+    font-size: 2rem;
+    color: #f3ecd6;
+    margin-bottom: 10px; /* Adds spacing below the icon */
+}
+
+  
+  .download-button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(90deg, #545a31, #588191);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .download-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(145, 0, 212, 0.947);
+  }
+  
+  /* Description Section */
+  .about-details p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #d4d4d4;
+    text-align: justify;
+  }
+
+  /* Button Positioned Below Text */
+  .about-action {
+    margin-top: 0px;
+    text-align: left;
+  }
+
+
+  /* Responsive Design */
+@media (max-width: 768px) {
+    .about-achievements {
+        flex-direction: column; /* Stacks cards vertically */
+        gap: 20px;
+    }
+
+    .achievement-card {
+        text-align: center; /* Center-aligns content for smaller screens */
+    }
+
+    .card-button {
+        align-self: center; /* Center-aligns the button on smaller screens */
+    }
+
+    .achievement-card ul {
+        text-align: center; /* Centers the list items on smaller screens */
+        padding-left: 0; /* Removes unnecessary padding */
+    }
+}
+
+/* Keyframes for Animations */
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes scaleUp {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Title Section Animation */
+  .about-title {
+    animation: fadeIn 1s ease-out forwards;
+  }
+  
+  /* Photo Section Animation */
+  .about-photo {
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideInLeft 1s ease-out forwards;
+    animation-delay: 0.5s;
+  }
+  
+  /* Achievement Cards Animation */
+  .achievement-card {
+    opacity: 0;
+    transform: scale(0.9);
+    animation: scaleUp 1s ease-out forwards;
+    animation-delay: 0.8s;
+  }
+  
+  /* Description Section Animation */
+  .about-details {
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+    animation-delay: 1s;
+  }
+  
+  /* Buttons Hover Effects */
+  .card-button,
+  .download-button {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card-button:hover,
+  .download-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 95, 109, 0.5);
+  }
+  
+  /* Additional Tweaks for Responsive Design */
+  @media (max-width: 768px) {
+    .about-content {
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+    }
+  
+    .about-photo img {
+      width: 100%;
+      height: auto;
+    }
+  
+    .about-achievements {
+      flex-direction: column; /* Stacks cards vertically */
+      gap: 20px;
+    }
+  
+    .achievement-card {
+      text-align: center; /* Center-aligns content for smaller screens */
+    }
+  
+    .card-button {
+      align-self: center; /* Center-aligns the button on smaller screens */
+    }
+  
+    .achievement-card ul {
+      text-align: center; /* Centers the list items on smaller screens */
+      padding-left: 0; /* Removes unnecessary padding */
+    }
+  
+    .about-details p {
+      text-align: center;
+    }
+  }
+  
+  

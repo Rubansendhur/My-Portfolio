@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Navbar.css';
+import menu_open from '../../assets/menu_open.svg';
+import menu_close from '../../assets/menu_close.svg';
 
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const menuItems = [
     { name: 'Home', id: 'home' },
     { name: 'About Me', id: 'about-me' },
@@ -13,15 +17,13 @@ const Navbar = () => {
   ];
 
   const handleScroll = (id) => {
+    setIsMenuOpen(false); // Close menu on click
     if (id === 'share') {
-      handleShare(); // Trigger sharing logic for the "Share" button
+      handleShare();
     } else {
       const element = document.getElementById(id);
       if (element) {
-        element.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start',
-        });
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     }
   };
@@ -32,7 +34,7 @@ const Navbar = () => {
         .share({
           title: 'Check out my portfolio!',
           text: 'Here is my personal portfolio showcasing my work and skills. Take a look!',
-          url: window.location.href, // Dynamically gets the current URL
+          url: window.location.href,
         })
         .then(() => console.log('Share successful'))
         .catch((error) => console.error('Error sharing:', error));
@@ -42,14 +44,22 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar">
-      {/* Ruban as a Button */}
-      <a href="#home" className="Ruban" aria-label="Go to Home" onClick={() => handleScroll('home')}>
+    <nav id = 'header' className="navbar">
+      {/* Ruban */}
+      <a href="#home" className="Ruban" aria-label="Go to Home">
         Ruban
       </a>
 
-      {/* Navigation Menu */}
-      <ul className="nav-menu">
+      {/* Menu Icon */}
+      <img
+        src={isMenuOpen ? menu_close : menu_open}
+        alt="Menu toggle"
+        className="menu-icon"
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+      />
+
+      {/* Navbar Menu */}
+      <ul className={`nav-menu ${isMenuOpen ? 'open' : ''}`}>
         {menuItems.map((item, index) => (
           <li
             key={index}
@@ -61,18 +71,15 @@ const Navbar = () => {
             {item.name}
           </li>
         ))}
+        <li
+          className="nav-connect"
+          onClick={() => handleScroll('contact')}
+          role="button"
+          tabIndex={0}
+        >
+          Connect with me
+        </li>
       </ul>
-
-      {/* Connect Button */}
-      <div
-        className="nav-connect"
-        aria-label="Connect with me"
-        onClick={() => handleScroll('contact')}
-        role="button"
-        tabIndex={0}
-      >
-        Connect with me
-      </div>  
     </nav>
   );
 };

@@ -14,7 +14,7 @@ const ScrollToTop = () => {
   };
 
   const scrollToTop = () => {
-    const homeSection = document.getElementById('home'); // Ensure 'home' is the id of your home section
+    const homeSection = document.getElementById('header'); // Ensure 'home' is the id of your home section
     if (homeSection) {
       homeSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
     } else {

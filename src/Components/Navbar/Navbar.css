@@ -5,45 +5,12 @@
     justify-content: space-between;
     margin: 20px 8%;
     padding: 20px 0;
-    border-bottom: 2px solid #f0f0f0; /* Add optional border */
-}
-
-/* Navbar Menu */
-.nav-menu {
-    display: flex;
-    align-items: center;
-    list-style: none;
-    gap: 3rem; /* Adjusted spacing */
-    font-size: 1rem;
-}
-
-.nav-menu li {
-    cursor: pointer;
-    color: #f3ecd6; /* Golden beige text color */
+    border-bottom: 2px solid #f0f0f0; /* Optional border */
     position: relative;
-    transition: color 0.3s ease;
+    z-index: 10;
 }
 
-.nav-menu li:hover {
-    color: #d4af37; /* Golden hover effect */
-}
-
-.nav-menu li::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -4px;
-    height: 2px;
-    width: 0;
-    background-color: #d4af37; /* Light golden underline */
-    transition: width 0.3s ease;
-}
-
-.nav-menu li:hover::after {
-    width: 100%;
-}
-
-/* Ruban Text Styling */
+/* Ruban Styling */
 .Ruban {
     font-size: 1.5rem;
     font-weight: bold;
@@ -51,8 +18,7 @@
     color: #f3ecd6; /* Beige-golden color */
     text-transform: uppercase;
     letter-spacing: 2px;
-    text-decoration: none; /* Remove underline */
-    margin-left: 20px; /* Move slightly to the right */
+    text-decoration: none;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
@@ -61,12 +27,41 @@
     transform: scale(1.05); /* Smooth scaling effect */
 }
 
+/* Menu Icon */
+.menu-icon {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 20;
+    display: none; /* Hidden by default for desktop */
+}
+
+/* Navbar Menu */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 3rem;
+    font-size: 1rem;
+}
+
+.nav-menu li {
+    cursor: pointer;
+    color: #f3ecd6;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-menu li:hover {
+    color: #d4af37;
+}
+
 /* Connect Button */
 .nav-connect {
     color: #fff;
     padding: 10px 20px;
     border-radius: 25px;
-    background: linear-gradient(90deg, #DA7C25, #B415FF); /* Previous gradient color */
+    background: linear-gradient(90deg, #DA7C25, #B415FF);
     font-size: 1rem;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -74,10 +69,10 @@
 
 .nav-connect:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 10px rgba(180, 21, 255, 0.8); /* Glowing shadow effect */
+    box-shadow: 0 0 10px rgba(180, 21, 255, 0.8);
 }
 
-/* Responsive Navbar */
+/* Mobile View */
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
@@ -85,12 +80,51 @@
         padding: 10px 0;
     }
 
+    .Ruban {
+        text-align: center;
+        margin-bottom: 20px; /* Spacing below Ruban */
+    }
+
+    .menu-icon {
+        display: block; /* Visible only on mobile */
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
     .nav-menu {
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: #000000;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 50px;
         flex-direction: column;
+        list-style: none;
         gap: 1rem;
+        padding: 20px;
+        transform: scale(0); /* Initially hidden */
+        transform-origin: top right;
+        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        opacity: 0; /* Initially hidden */
+        visibility: hidden;
+    }
+
+    .nav-menu.open {
+        transform: scale(1); /* Show menu when open */
+        opacity: 1; /* Make visible */
+        visibility: visible;
+    }
+
+    .nav-item {
+        text-align: center;
+        padding: 10px 0;
+        border-bottom: .5px solid #eee;
     }
 
     .nav-connect {
         margin-top: 10px;
+        width: 70%;
+        text-align: center;
     }
 }

@@ -266,38 +266,16 @@
   
   /* Additional Tweaks for Responsive Design */
   @media (max-width: 768px) {
-    .about-content {
-      flex-direction: column;
-      align-items: center;
-      gap: 40px;
+    /* Center Align Explore More Button */
+    .about-action {
+        text-align: center; /* Center align the button container */
+        margin-top: 20px; /* Add spacing above the button */
     }
-  
-    .about-photo img {
-      width: 100%;
-      height: auto;
+
+    .download-button {
+        margin: 0 auto; /* Center the button itself */
     }
-  
-    .about-achievements {
-      flex-direction: column; /* Stacks cards vertically */
-      gap: 20px;
-    }
-  
-    .achievement-card {
-      text-align: center; /* Center-aligns content for smaller screens */
-    }
-  
-    .card-button {
-      align-self: center; /* Center-aligns the button on smaller screens */
-    }
-  
-    .achievement-card ul {
-      text-align: center; /* Centers the list items on smaller screens */
-      padding-left: 0; /* Removes unnecessary padding */
-    }
-  
-    .about-details p {
-      text-align: center;
-    }
-  }
-  
+}
+
+
   

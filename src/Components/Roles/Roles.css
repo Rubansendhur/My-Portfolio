@@ -46,6 +46,7 @@
 .role-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(135deg, #2c2c34, #3a3a42);
 }
 
 .role-icon {
@@ -87,10 +88,11 @@
 /* Hover effect for the two bottom cards */
 .role-card:nth-child(4):hover,
 .role-card:nth-child(5):hover {
-    transform: translateY(-12px) scale(1.02); /* Slightly lift and enlarge */
-    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.5); /* Add a stronger shadow */
+    /*transform: translateY(-12px) scale(1.02); /* Slightly lift and enlarge */
+    /*box-shadow: 0 14px 40px rgba(0, 0, 0, 0.5); /* Add a stronger shadow */
     background: linear-gradient(135deg, #2c2c34, #3a3a42); /* Change background gradient */
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    transform: translateY(8px,7px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
 }
 
 
@@ -134,15 +136,29 @@
 @media (max-width: 768px) {
     .roles-grid {
         grid-template-columns: 1fr; /* Stack all cards vertically */
-        gap: 25px;
+        gap: 25px; /* Equal spacing between cards */
     }
 
     .role-card {
-        width: 100%; /* Full width on small screens */
+        width: 100%; /* Full width for all cards on mobile */
+        transform: none; /* Remove any transforms */
     }
 
+    /* Reset specific styles for the 4th and 5th cards on mobile */
     .role-card:nth-child(4),
     .role-card:nth-child(5) {
-        grid-column: auto; /* Reset alignment for smaller screens */
+        grid-column: auto; /* Reset column positioning */
+        transform: none; /* Remove custom transforms */
+        margin-top: 0; /* Reset any margin adjustments */
+    }
+
+    /* Remove decorative connecting lines for the 4th and 5th cards */
+    .role-card:nth-child(4)::before,
+    .role-card:nth-child(5)::before {
+        content: none; /* Hide the horizontal connecting lines */
+    }
+
+    .roles-grid::before {
+        content: none; /* Remove decorative vertical line */
     }
 }

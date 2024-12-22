@@ -133,3 +133,73 @@
     transform: scale(1.05);
   }
   
+  /* Mobile View */
+
+  @media (max-width: 768px) {
+    /* General Tab Styles */
+    .tabs-container {
+      padding: 20px 10px; /* Reduce padding for smaller screens */
+    }
+  
+    .tabs-header {
+      flex-wrap: wrap; /* Allow buttons to wrap if necessary */
+      gap: 10px; /* Reduce spacing between buttons */
+    }
+  
+    .tab-button {
+      font-size: 0.9rem; /* Adjust font size for smaller screens */
+      padding: 8px 15px; /* Reduce padding */
+    }
+  
+    /* Project Grid */
+    .projects-grid {
+      flex-direction: column; /* Stack project cards vertically */
+      gap: 15px; /* Reduce spacing between cards */
+    }
+  
+    .project-card {
+      width: 100%; /* Take full width of the container */
+      padding: 20px; /* Adjust padding for better spacing */
+      height: auto; /* Allow height to adjust dynamically */
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for smaller screens */
+    }
+  
+    /* Technologies */
+    .technologies {
+      gap: 5px; /* Reduce spacing between badges */
+    }
+  
+    .tech-badge {
+      font-size: 0.7rem; /* Smaller badges for mobile */
+      padding: 2px 6px; /* Adjust padding */
+    }
+  
+    /* GitHub Button */
+    .github-button {
+      font-size: 0.9rem; /* Reduce font size */
+      padding: 8px 12px; /* Adjust padding */
+      gap: 3px; /* Adjust icon-text spacing */
+    }
+  
+    /* Dot Navigation */
+    .dot-navigation {
+      margin-top: 10px; /* Add spacing above dots */
+    }
+  
+    .dot {
+      width: 10px; /* Smaller dots */
+      height: 10px;
+      margin: 0 3px; /* Adjust spacing between dots */
+    }
+  
+    /* View All Button */
+    .view-all-button-container {
+      margin-top: 20px; /* Reduce spacing above button */
+    }
+  
+    .view-all-button {
+      font-size: 1rem; /* Reduce font size */
+      padding: 10px 20px; /* Adjust padding */
+    }
+  }
+  
